@@ -1,5 +1,21 @@
 // Check if the dialog has been displayed before
 const dialogDisplayed = localStorage.getItem("dialogDisplayed");
+// Get the language dialog element
+const languageDialog = document.getElementById('language-dialog');
+
+// Define the minimum and maximum widths
+const minWidth = 100;
+const maxWidth = 500;
+
+// Calculate the width based on your criteria (e.g., 41% between min and max)
+const windowWidth = window.innerWidth;
+let width = '41%'; // Default width
+
+if (windowWidth < minWidth) {
+  width = `${minWidth}px`;
+} else if (windowWidth > maxWidth) {
+  width = `${maxWidth}px`;
+}
 
 if (!dialogDisplayed) {
   // Show the dialog
