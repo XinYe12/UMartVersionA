@@ -19,5 +19,5 @@ document.getElementById("close-dialog-button").addEventListener("click", functio
     // Redirect to the default language or other languages
     window.location.href = 'https://umartca.com'; // Replace with your URL
   }
-  alert("Language preference selected: " + selectedLanguage);
+
 });
