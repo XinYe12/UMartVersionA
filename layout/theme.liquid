@@ -36,11 +36,13 @@
     {% render 'meta-tags' %}
     {{ 'owl.carousel.css' | asset_url | stylesheet_tag }}
     {{ 'owl.theme.css' | asset_url | stylesheet_tag }}
+    {{ 'languagePreference.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
     <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'countdown.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'languagePreference.js' | asset_url }}" defer="defer"></script>
 
     {{ '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js' | script_tag }}
     {{ '//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js' | script_tag }}
@@ -158,6 +160,19 @@
         <span class="rotating"></span>
       </div>
     {% endif %}
+    <div id="language-dialog" class="language-dialog">
+    <div class="language-dialog-content">
+        <h2>Language Preferences</h2>
+        <p>Select your preferred language:</p>
+        <select id="language-preferences">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+        </select>
+        <button id="close-dialog-button" class="close-dialog-button">Confirm</button>
+      </div>
+    </div>
+
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
