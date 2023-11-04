@@ -7,6 +7,8 @@ if (!dialogDisplayed) {
 
   // Set a flag to indicate that the dialog has been displayed
   localStorage.setItem("dialogDisplayed", "true");
+}else{
+    document.getElementById("language-dialog").style.display = "none";
 }
 
 document.getElementById("close-dialog-button").addEventListener("click", function () {
