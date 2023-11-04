@@ -1,25 +1,36 @@
+/* Styles for the language dialog container */
 .language-dialog {
-    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 30%; /* Adjust to your desired width */
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    z-index: 999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
   }
   
+  /* Styles for the language dialog content */
   .language-dialog-content {
-    text-align: center;
+    margin: 0;
+    padding: 0;
   }
   
+  /* Styles for the close button */
   .close-dialog-button {
-    background-color: #ccc;
-    color: #000;
+    background-color: #ff5722; /* Change to your preferred color */
+    color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Hover effect for the close button */
+  .close-dialog-button:hover {
+    background-color: #e64a19; /* Change to your preferred hover color */
   }
   
