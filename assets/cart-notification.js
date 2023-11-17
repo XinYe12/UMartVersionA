@@ -13,7 +13,14 @@ class CartNotification extends HTMLElement {
   }
 
   open() {
+    this.notification.classList.add('animate', 'active');
 
+    this.notification.addEventListener('transitionend', () => {
+      this.notification.focus();
+      trapFocus(this.notification);
+    }, { once: true });
+
+    document.body.addEventListener('click', this.onBodyClick);
   }
 
   close() {

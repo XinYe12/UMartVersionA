@@ -10,7 +10,7 @@
           loading="lazy"
         >
       {% endif %}
-      <div class="cart-notification-product__info">
+      <div class="cart-notifications-product__info">
         <h3 class="cart-notification-product__name h4">{{ item.product.title | escape }}</h3>
         {%- unless item.product.has_only_default_variant -%}
           <dl>
@@ -25,7 +25,7 @@
         <div class="product-item__price">
             <span class="quantity">{{ item.quantity }}</span>
             X
-            {{ item.price | money }}
+
           </div>
       </div>
     </div>
