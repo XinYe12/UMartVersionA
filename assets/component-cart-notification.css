@@ -119,7 +119,6 @@
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     padding: 30px;
-    display: none;
 }
 .cart-notification__links {
     text-align: center;
