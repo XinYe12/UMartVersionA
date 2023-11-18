@@ -1380,6 +1380,7 @@ deferred-media {
 #cart-notification-button {
   background-color: var(--color-base-accent-1);
   color: var(--color-base-button-text-hover);
+  display: none;
 }
 .button:hover,
 #cart-notification-button:hover,
