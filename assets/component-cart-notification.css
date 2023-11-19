@@ -150,22 +150,16 @@
 /*
 these are the styles for the new-added button style notification
 */
-
-$radius: 55px;
-$circumf: 3.1416 * $radius * 2;
-$check-len: 75px;
-
 @keyframes outline {
   from {
-    stroke-dasharray: 0, $circumf;
+    stroke-dasharray: 0, 345.576px;
   }
   to {
-    stroke-dasharray: $circumf, $circumf;
+    stroke-dasharray: 345.576px, 345.576px;
   }
 }
-
 #outline {
-  animation: .38s ease-in outline;
+  animation: 0.38s ease-in outline;
   transform: rotate(0deg);
   transform-origin: center;
 }
@@ -178,42 +172,37 @@ $check-len: 75px;
     transform: scale(0);
   }
 }
-
 #white-circle {
-  animation: .35s ease-in .35s forwards circle;
+  animation: 0.35s ease-in 0.35s forwards circle;
   transform: none;
   transform-origin: center;
 }
 
 @keyframes check {
   from {
-    stroke-dasharray: 0, $check-len;
+    stroke-dasharray: 0, 75px;
   }
   to {
-    stroke-dasharray: $check-len, $check-len;
+    stroke-dasharray: 75px, 75px;
   }
 }
-
 #check {
-  animation: .34s cubic-bezier(0.65, 0, 1, 1) .8s forwards check; 
-  stroke-dasharray: 0, $check-len;
+  animation: 0.34s cubic-bezier(0.65, 0, 1, 1) 0.8s forwards check;
+  stroke-dasharray: 0, 75px;
 }
 
 @keyframes check-group {
   from {
     transform: scale(1);
   }
-  
   50% {
     transform: scale(1.09);
   }
-  
   to {
     transform: scale(1);
   }
 }
-
 #check-group {
-  animation: .32s ease-in-out 1.03s check-group;
+  animation: 0.32s ease-in-out 1.03s check-group;
   transform-origin: center;
 }
