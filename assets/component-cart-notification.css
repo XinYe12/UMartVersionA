@@ -166,7 +166,7 @@ these are the styles for the new-added button style notification
   margin: auto; /* Center the container */
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 15%;
   transform: translate(-50%, -50%);
 }
 
