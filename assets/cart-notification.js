@@ -3,7 +3,6 @@ class CartNotification extends HTMLElement {
     super();
 
     this.notification = document.getElementById('cart-notification');
-    this.notification_button = document.getElementById('Btn-notification');
     this.header = document.querySelector('sticky-header');
     this.onBodyClick = this.handleBodyClick.bind(this);
     
@@ -14,15 +13,32 @@ class CartNotification extends HTMLElement {
   }
 
   open() {
+    // Trigger checkmark animation immediately
+    const checkmarkContainer = document.createElement('div');
+    checkmarkContainer.classList.add('checkmark-container');
+  
+    const checkmark = document.createElement('div');
+    checkmark.classList.add('checkmark');
+    checkmark.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="white" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+    `;
+  
+    checkmarkContainer.appendChild(checkmark);
+    this.notification.appendChild(checkmarkContainer);
+  
+    // Continue with the rest of the open function
     this.notification.classList.add('animate', 'active');
   
+    // Set focus and trap focus as before
     this.notification.addEventListener('transitionend', () => {
       this.notification.focus();
       trapFocus(this.notification);
     }, { once: true });
-
+  
+    // Add the event listener for body click
     document.body.addEventListener('click', this.onBodyClick);
   }
+  
 
   close() {
     this.notification.classList.remove('active');
