@@ -38,12 +38,12 @@ class CartNotification extends HTMLElement {
     this.notification.addEventListener('transitionend', () => {
       this.notification.focus();
       trapFocus(this.notification);
-  
-      // Set a timeout to remove the checkmark after 3 seconds
-      setTimeout(() => {
-        checkmarkContainer.remove();
-      }, 5000);
     }, { once: true });
+  
+    // Set a timeout to remove the checkmark after 10 seconds
+    setTimeout(() => {
+      checkmarkContainer.remove();
+    }, 10000);
   
     // Add the event listener for body click
     document.body.addEventListener('click', this.onBodyClick);

@@ -168,8 +168,8 @@ these are the styles for the new-added button style notification
   align-items: center;
   justify-content: center;
   opacity: 0;
-  animation: checkmarkAnimation 2s ease-out forwards;
-  animation-delay: 1s; /* Adjust the delay before checkmark appears */
+  animation: checkmarkAnimation 1s ease-out forwards;
+  
 }
 
 .fade-out {
