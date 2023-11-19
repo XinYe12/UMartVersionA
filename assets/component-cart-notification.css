@@ -144,6 +144,11 @@
     top: 10px;
     right: 10px;
 }
+
+/*
+these are the styles for the new-added button style notification
+*/
+
 .Btn {
   display: flex;
   align-items: center;
