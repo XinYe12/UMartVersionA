@@ -160,7 +160,7 @@ these are the styles for the new-added button style notification
     transform: scale(1.2);
   }
   100% {
-    opacity: 1;
+    opacity: 0; /* Set opacity to 0 at the end of the animation */
     transform: scale(1);
   }
 }
@@ -172,7 +172,6 @@ these are the styles for the new-added button style notification
   flex-direction: column;
   text-align: center;
   opacity: 1;
-  transition: opacity 1s ease-out; /* Add transition for opacity */
 }
 
 .checkmark {
@@ -183,7 +182,8 @@ these are the styles for the new-added button style notification
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: checkmarkAnimation 1s ease-out;
+  animation: checkmarkAnimation 1s ease-out forwards; /* Keep the final state of the animation */
+  transition: opacity 0.5s ease-out; /* Add transition for opacity */
 }
 
 .checkmark svg {
