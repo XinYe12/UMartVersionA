@@ -92,7 +92,9 @@
     font-family: var(--font-body-family);
     font-weight: 500;
 }
-
+.cart-notifications-product__info{
+  display: none;
+}
 .cart-notification-product__option {
     color: var(--color-base-text);
     margin-top: 1rem;
