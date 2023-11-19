@@ -150,7 +150,7 @@ these are the styles for the new-added button style notification
 */
 
 .Btn {
-  margin-top: -100px;
+  margin-top: -300px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
