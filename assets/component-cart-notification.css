@@ -172,7 +172,7 @@ these are the styles for the new-added button style notification
   flex-direction: column;
   text-align: center;
   opacity: 1;
-  transition: opacity 0.5s ease-out; /* Add transition for opacity */
+  transition: opacity 1s ease-out; /* Add transition for opacity */
 }
 
 .checkmark {
