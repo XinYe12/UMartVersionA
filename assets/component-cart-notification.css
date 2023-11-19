@@ -171,7 +171,6 @@ these are the styles for the new-added button style notification
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  opacity: 1;
 }
 
 .checkmark {
@@ -182,9 +181,10 @@ these are the styles for the new-added button style notification
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: checkmarkAnimation 9s ease-out forwards;
-  transition: opacity 9s ease-out;
-
+  opacity: 0;
+  animation: checkmarkAnimation 2s ease-out forwards;
+  transition: opacity 1s ease-out;
+  animation-delay: 1s; /* Adjust the delay as needed */
 }
 
 .checkmark svg {
