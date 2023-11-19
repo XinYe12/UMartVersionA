@@ -151,6 +151,7 @@
 these are the styles for the new-added button style notification
 */
 /* Add the modified CSS code here */
+
 @keyframes hoverAnimation {
   0% {
     width: 45px;
@@ -165,6 +166,65 @@ these are the styles for the new-added button style notification
     border-radius: 50%;
   }
 }
+
+.Btn {
+  margin-top: -450px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(98, 238, 196);
+  animation: hoverAnimation 3s infinite; /* Adjust the duration as needed */
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+
+/* Hover effect button's text */
+.Btn .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+
+/* Button click effect */
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
 
 .Btn {
   /* Add the rest of your styles here */
