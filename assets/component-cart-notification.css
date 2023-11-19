@@ -35,7 +35,7 @@
 .cart-notification.active {
   transform: translateY(0);
   transition: transform var(--duration-default) ease, visibility 0s;
-  visibility: hidden;
+  visibility: visible;
   pointer-events: none;
 }
 
