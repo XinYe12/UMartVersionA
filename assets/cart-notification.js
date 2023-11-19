@@ -42,7 +42,7 @@ class CartNotification extends HTMLElement {
       // Set a timeout to remove the checkmark after 3 seconds
       setTimeout(() => {
         checkmarkContainer.remove();
-      }, 3000);
+      }, 5000);
     }, { once: true });
   
     // Add the event listener for body click
