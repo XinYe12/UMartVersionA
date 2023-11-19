@@ -150,54 +150,48 @@
 /*
 these are the styles for the new-added button style notification
 */
-@keyframes hoverAnimation {
-  0%, 100% {
-    width: 45px;
-    border-radius: 50%;
+@keyframes checkmarkAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
   }
   50% {
-    width: 125px;
-    border-radius: 40px;
+    opacity: 1;
+    transform: scale(1.2);
   }
   100% {
-    width: 45px;
-    border-radius: 50%;
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.Btn {
-  margin-top: -450px;
+.checkmark-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 45px;
-  height: 45px;
-  border: none;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.checkmark {
+  width: 60px;
+  height: 60px;
+  background-color: #4CAF50;
   border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
-  background-color: rgb(98, 238, 196);
-  animation: hoverAnimation 3s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: checkmarkAnimation 1s ease-out;
 }
 
-.Btn:hover {
-  animation: none; /* Stop the animation on hover */
+.checkmark svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
 }
 
-.Btn:active {
-  transform: translate(2px, 2px);
-}
-
-/* Add a delay before vanishing after the animation stops */
-.Btn:not(:hover) {
-  animation: vanishAnimation 3s forwards;
-}
-
-@keyframes vanishAnimation {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+.message {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #333;
 }
