@@ -157,24 +157,26 @@ these are the styles for the new-added button style notification
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  background-color: #4CAF50; /* Background color */
+  border-radius: 10px; /* Adjust the border radius as needed */
+  padding: 20px; /* Adjust the padding as needed */
+  color: white; /* Text color */
 }
 
 .checkmark {
   width: 40px; /* Adjust the size as needed */
   height: 40px; /* Adjust the size as needed */
-  background-color: #4CAF50;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   animation: checkmarkAnimation 1s ease-out forwards;
-  
 }
 
 .fade-out {
   animation: fadeOut 1s ease-out forwards;
-  animation-delay: 4s; /* Adjust the delay before fade-out starts */
+  animation-delay: 3s; /* Adjust the delay before fade-out starts */
 }
 
 .checkmark svg {
@@ -186,7 +188,6 @@ these are the styles for the new-added button style notification
 .message {
   margin-top: 10px; /* Adjust the spacing between checkmark and message */
   font-size: 1.5em;
-  color: #333;
 }
 
 @keyframes checkmarkAnimation {
