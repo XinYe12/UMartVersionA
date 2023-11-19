@@ -3,6 +3,7 @@ class CartNotification extends HTMLElement {
     super();
 
     this.notification = document.getElementById('cart-notification');
+    this.notification_button = document.getElementById('Btn-notification');
     this.header = document.querySelector('sticky-header');
     this.onBodyClick = this.handleBodyClick.bind(this);
     
@@ -14,7 +15,7 @@ class CartNotification extends HTMLElement {
 
   open() {
     this.notification.classList.add('animate', 'active');
-
+    this.notification_button.classList.add('hover');
     this.notification.addEventListener('transitionend', () => {
       this.notification.focus();
       trapFocus(this.notification);
