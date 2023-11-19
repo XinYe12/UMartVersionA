@@ -1,20 +1,21 @@
 <cart-notification>
 
   <div class="cart-notification-wrapper page-width">
+    <div class="checkmark-container">
+      <div class="checkmark">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+        </svg>
+      </div>
+      <div class="message">Product added to cart</div>
+    </div>
     <div id="cart-notification" class="cart-notification focus-inset" aria-modal="true" aria-label="{{ 'general.cart.item_added' | t }}" role="dialog" tabindex="-1">
       
      <div class="cart-notification-inner">
       <div id="cart-notification-product" class="cart-notification-product"></div>
       <div class="cart-notification__links">
         <a href="{{ routes.cart_url }}" id="cart-notification-button" class="button button--secondary button--full-width"></a>
-        <div class="checkmark-container">
-          <div class="checkmark">
-            <svg viewBox="0 0 24 24">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-            </svg>
-          </div>
-          <div class="message">Product added to cart</div>
-        </div>
+       
 
       </div>
     </div>
