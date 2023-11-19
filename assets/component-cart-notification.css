@@ -182,8 +182,8 @@ these are the styles for the new-added button style notification
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: checkmarkAnimation 2s ease-out forwards;
-  transition: opacity 4s ease-out;
+  animation: checkmarkAnimation 9s ease-out forwards;
+  transition: opacity 9s ease-out;
 
 }
 
