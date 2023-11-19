@@ -168,6 +168,9 @@ these are the styles for the new-added button style notification
   top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media screen and (max-width: 767px) {
+    width: 80vw; /* Adjust the width as needed for mobile devices */
+  }
 }
 
 .checkmark {
