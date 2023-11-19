@@ -184,6 +184,7 @@ these are the styles for the new-added button style notification
   justify-content: center;
   animation: checkmarkAnimation 1s ease-out forwards; /* Keep the final state of the animation */
   transition: opacity 0.5s ease-out; /* Add transition for opacity */
+  animation-delay: 2s; /* Delay before the animation starts */
 }
 
 .checkmark svg {
