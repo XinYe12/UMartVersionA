@@ -19,6 +19,13 @@
     </div>
   </div>
 </cart-notification>
+<script>
+  $(document).ready(function() {
+    // Add a class to the button when the page loads
+    $(".Btn").addClass("hover");
+  });
+</script>
+<script src="{{ 'jquery.js' | asset_url }}" defer></script>
 {% style %}
   .cart-notification {
      display: none;
