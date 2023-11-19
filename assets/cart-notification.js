@@ -13,6 +13,11 @@ class CartNotification extends HTMLElement {
   }
 
   open() {
+    // Remove any existing checkmark elements
+    this.notification.querySelectorAll('.checkmark-container').forEach((checkmarkContainer) => {
+      checkmarkContainer.remove();
+    });
+  
     // Trigger checkmark animation immediately
     const checkmarkContainer = document.createElement('div');
     checkmarkContainer.classList.add('checkmark-container');
@@ -38,6 +43,7 @@ class CartNotification extends HTMLElement {
     // Add the event listener for body click
     document.body.addEventListener('click', this.onBodyClick);
   }
+  
   
 
   close() {
