@@ -150,20 +150,6 @@
 /*
 these are the styles for the new-added button style notification
 */
-@keyframes checkmarkAnimation {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 0; /* Set opacity to 0 at the end of the animation */
-    transform: scale(1);
-  }
-}
 
 .checkmark-container {
   display: flex;
@@ -183,8 +169,12 @@ these are the styles for the new-added button style notification
   justify-content: center;
   opacity: 0;
   animation: checkmarkAnimation 2s ease-out forwards;
-  transition: opacity 1s ease-out;
-  animation-delay: 5s; /* Adjust the delay as needed */
+  animation-delay: 1s; /* Adjust the delay before checkmark appears */
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+  animation-delay: 4s; /* Adjust the delay before fade-out starts */
 }
 
 .checkmark svg {
@@ -197,4 +187,28 @@ these are the styles for the new-added button style notification
   margin-top: 10px; /* Adjust the spacing between checkmark and message */
   font-size: 1.5em;
   color: #333;
+}
+
+@keyframes checkmarkAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
