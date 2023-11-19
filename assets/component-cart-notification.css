@@ -181,7 +181,7 @@ these are the styles for the new-added button style notification
   overflow: hidden;
   transition-duration: .3s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
-  background-color: rgb(98, 238, 196);
+  background-color: rgb(3, 211, 149);
   animation: hoverAnimation 3s infinite; /* Adjust the duration as needed */
 }
 
