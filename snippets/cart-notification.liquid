@@ -19,8 +19,15 @@
     </div>
   </div>
 </cart-notification>
+<script>
+  $(document).ready(function() {
+    // Add hover class to .Btn when the page loads
+    $(".Btn").addClass("hovered");
+  });
+</script>
 {% style %}
   .cart-notification {
      display: none;
   }
 {% endstyle %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

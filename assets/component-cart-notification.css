@@ -1,3 +1,4 @@
+
 .cart-notification-wrapper .cart-notification {
   display: block;
 }
@@ -165,7 +166,7 @@ these are the styles for the new-added button style notification
   overflow: hidden;
   transition-duration: .3s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
-  background-color: rgb(0, 241, 169);
+  background-color: rgb(98, 238, 196);
 }
 
 /* plus sign */
@@ -196,19 +197,19 @@ these are the styles for the new-added button style notification
   transition-duration: .3s;
 }
 /* hover effect on button width */
-.Btn {
+.Btn:hover {
   width: 125px;
   border-radius: 40px;
   transition-duration: .3s;
 }
 
-.Btn .sign {
+.Btn:hover .sign {
   width: 30%;
   transition-duration: .3s;
   padding-left: 20px;
 }
 /* hover effect button's text */
-.Btn .text {
+.Btn:hover .text {
   opacity: 1;
   width: 70%;
   transition-duration: .3s;
