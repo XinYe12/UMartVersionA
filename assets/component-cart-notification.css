@@ -150,10 +150,8 @@
 /*
 these are the styles for the new-added button style notification
 */
-/* Add the modified CSS code here */
-
 @keyframes hoverAnimation {
-  0% {
+  0%, 100% {
     width: 45px;
     border-radius: 50%;
   }
@@ -179,54 +177,27 @@ these are the styles for the new-added button style notification
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition-duration: .3s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
-  background-color: rgb(3, 211, 149);
-  animation: hoverAnimation 3s infinite; /* Adjust the duration as needed */
+  background-color: rgb(98, 238, 196);
+  animation: hoverAnimation 3s infinite;
 }
 
-/* plus sign */
-.sign {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Btn:hover {
+  animation: none; /* Stop the animation on hover */
 }
 
-.sign svg {
-  width: 17px;
-}
-
-.sign svg path {
-  fill: white;
-}
-/* text */
-.text {
-  position: absolute;
-  right: 0%;
-  width: 0%;
-  opacity: 0;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  transition-duration: .3s;
-}
-
-/* Hover effect button's text */
-.Btn .text {
-  opacity: 1;
-  width: 70%;
-  transition-duration: .3s;
-  padding-right: 10px;
-}
-
-/* Button click effect */
 .Btn:active {
   transform: translate(2px, 2px);
 }
 
+/* Add a delay before vanishing after the animation stops */
+.Btn:not(:hover) {
+  animation: vanishAnimation 3s forwards;
+}
 
-.Btn {
-  /* Add the rest of your styles here */
-  animation: hoverAnimation 3s infinite;
+@keyframes vanishAnimation {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
