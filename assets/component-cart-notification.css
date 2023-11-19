@@ -163,6 +163,11 @@ these are the styles for the new-added button style notification
   color: white; /* Text color */
   width: 12.5vw; /* 1/8 of the viewport width */
   box-sizing: border-box;
+  margin: auto; /* Center the container */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .checkmark {
