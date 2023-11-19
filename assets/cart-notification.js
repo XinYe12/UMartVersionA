@@ -15,7 +15,7 @@ class CartNotification extends HTMLElement {
 
   open() {
     this.notification.classList.add('animate', 'active');
-    this.notification_button.classList.add('hover', 'active');
+  
     this.notification.addEventListener('transitionend', () => {
       this.notification.focus();
       trapFocus(this.notification);
