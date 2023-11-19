@@ -171,6 +171,8 @@ these are the styles for the new-added button style notification
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-out; /* Add transition for opacity */
 }
 
 .checkmark {
