@@ -151,7 +151,6 @@
 /*
 these are the styles for the new-added button style notification
 */
-
 .Btn {
   margin-top: -450px;
   display: flex;
@@ -166,13 +165,12 @@ these are the styles for the new-added button style notification
   overflow: hidden;
   transition-duration: .3s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
-  background-color: rgb(98, 238, 196);
+  background-color: rgb(0, 241, 169);
 }
 
 /* plus sign */
 .sign {
-  width: 100%;
-  transition-duration: .3s;
+  width: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,11 +178,9 @@ these are the styles for the new-added button style notification
 
 .sign svg {
   width: 17px;
-}
-
-.sign svg path {
   fill: white;
 }
+
 /* text */
 .text {
   position: absolute;
@@ -196,7 +192,8 @@ these are the styles for the new-added button style notification
   font-weight: 600;
   transition-duration: .3s;
 }
-/* hover effect on button width */
+
+/* hover effect */
 .Btn:hover {
   width: 125px;
   border-radius: 40px;
@@ -208,14 +205,15 @@ these are the styles for the new-added button style notification
   transition-duration: .3s;
   padding-left: 20px;
 }
-/* hover effect button's text */
+
 .Btn:hover .text {
   opacity: 1;
   width: 70%;
   transition-duration: .3s;
   padding-right: 10px;
 }
-/* button click effect*/
+
+/* button click effect */
 .Btn:active {
-  transform: translate(2px ,2px);
+  transform: translate(2px, 2px);
 }
