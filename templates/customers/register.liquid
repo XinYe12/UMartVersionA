@@ -113,6 +113,19 @@
         {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
       </span>
     {%- endif -%}
+    <div class="field">
+      <input
+        type="text"
+        name="customer[Number]"
+        id="RegisterForm-Number"
+        {% if form.last_name %}
+          value="{{ form.last_name }}"
+        {% endif %}
+        autocomplete="family-name"
+        placeholder="Phone Number"
+      >
+      <label for="RegisterForm-Number"> Phone Number </label>
+    </div>
     <button>
       {{ 'customer.register.submit' | t }}
     </button>
