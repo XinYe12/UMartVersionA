@@ -295,8 +295,8 @@
         "8cd32948-ed87-418b-b915-ad8a30d5df28": {
           "type": "slider",
           "settings": {
-            "title1": "Suntory Drink",
-            "collection": "suntory-drink"
+            "title1": "Group Buy",
+            "collection": "group-buy"
           }
         },
         "f4c871f0-4e22-4073-8e3e-ac9bf52f212f": {
@@ -409,6 +409,7 @@
       "blocks": {
         "1bb664fb-9af9-4d85-a987-ca32960e6b0b": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "subbanner": "shopify:\/\/shop_images\/cms-banner-5.jpg",
             "custom_liquid": "<div class='cms-banner-title-three'>Grocery Supermarket And <br>Delivery of Fruits<\/div>",
@@ -418,6 +419,7 @@
         },
         "f4b229db-fc26-4260-b945-856350b891a6": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "subbanner": "shopify:\/\/shop_images\/2023-11-17_09_38_16_809x_4df464e7-606b-45ff-92bb-5aa19cd3ec41.webp",
             "custom_liquid": "<div class='cms-banner-title-three'>Weekend 25% Off<\/div><div class='cms-banner-subtitle-three'>Healthy Oatmeal<br>Waffle<\/div>",
@@ -430,7 +432,6 @@
         "1bb664fb-9af9-4d85-a987-ca32960e6b0b",
         "f4b229db-fc26-4260-b945-856350b891a6"
       ],
-      "disabled": true,
       "settings": {
         "addclass": "fourth-banner"
       }
