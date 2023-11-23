@@ -415,10 +415,20 @@
             "button_link": "",
             "button_label": "Shop Now"
           }
+        },
+        "f4b229db-fc26-4260-b945-856350b891a6": {
+          "type": "image",
+          "settings": {
+            "subbanner": "shopify:\/\/shop_images\/2023-11-17_09_38_16_809x_4df464e7-606b-45ff-92bb-5aa19cd3ec41.webp",
+            "custom_liquid": "<div class='cms-banner-title-three'>Weekend 25% Off<\/div><div class='cms-banner-subtitle-three'>Healthy Oatmeal<br>Waffle<\/div>",
+            "button_link": "shopify:\/\/collections\/group-buy",
+            "button_label": "Shop Now"
+          }
         }
       },
       "block_order": [
-        "1bb664fb-9af9-4d85-a987-ca32960e6b0b"
+        "1bb664fb-9af9-4d85-a987-ca32960e6b0b",
+        "f4b229db-fc26-4260-b945-856350b891a6"
       ],
       "disabled": true,
       "settings": {
