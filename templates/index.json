@@ -465,6 +465,7 @@
       "blocks": {
         "1626176787d5514a31-2": {
           "type": "logo_image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/2023-11-17_09_38_16_809x_4df464e7-606b-45ff-92bb-5aa19cd3ec41.webp",
             "link": "#"
