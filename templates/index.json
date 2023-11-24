@@ -23,40 +23,39 @@
     },
     "16563967260a045a6e": {
       "type": "special-collection",
-      "disabled": true,
       "settings": {
-        "title": "Special Offers Of The Week!",
-        "desc": "Group purchase products will delivery on every Friday. Please first join the WeChat group, confirm your order, and then proceed to place your order and make the payment. Thank you.\"",
+        "title": "Weekly Special Deal",
+        "desc": "The Best",
         "collection": "group-buy",
-        "products_to_show": 6,
+        "products_to_show": 10,
         "swipe_on_mobile": true,
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "show_secondary_image": true,
-        "add_image_padding": false,
+        "add_image_padding": true,
         "show_vendor": false,
         "days": "Days",
         "hour": "Hours",
         "min": "Minutes",
         "sec": "Seconds",
         "date_formate": "2023-11-03 21:00:00",
-        "show_rating": true
+        "show_rating": false
       }
     },
     "1642049895a001e45a": {
       "type": "tm-tab_collection",
       "blocks": {
-        "b39999f0-571b-420c-9b73-7076ec567587": {
-          "type": "slider",
-          "settings": {
-            "title1": "Featured",
-            "collection": "featured"
-          }
-        },
         "abeecb49-dd4b-4b93-96d3-4db9f6d15caf": {
           "type": "slider",
           "settings": {
             "title1": "New Arrival",
             "collection": "new-arrival"
+          }
+        },
+        "b39999f0-571b-420c-9b73-7076ec567587": {
+          "type": "slider",
+          "settings": {
+            "title1": "Featured",
+            "collection": "featured"
           }
         },
         "21c9ee3b-601f-48e5-a357-45853253d1c9": {
@@ -68,8 +67,8 @@
         }
       },
       "block_order": [
-        "b39999f0-571b-420c-9b73-7076ec567587",
         "abeecb49-dd4b-4b93-96d3-4db9f6d15caf",
+        "b39999f0-571b-420c-9b73-7076ec567587",
         "21c9ee3b-601f-48e5-a357-45853253d1c9"
       ],
       "settings": {
