@@ -56,7 +56,7 @@
   width: 95%;
   left: 2%;
   top: 150%;
-  position: absolute; 
+  position: relative; 
   text-align: left;
 }
 @media (max-width: 768px) {
