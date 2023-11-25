@@ -156,7 +156,6 @@
          <product-form class="product-form">
            {%- form 'product', product, id: product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-           <div class = "button_container">
               <div class="product-form__buttons">
                 {% if product.variants.size == 1 %}
                 <button
@@ -176,7 +175,6 @@
                   </a>
                 {% endif %}
               </div>
-            </div>
            {%- endform -%}
          </product-form>
      
