@@ -29,9 +29,7 @@
 
 
 .card-information__text.h5 a {
-    position: absolute;
-    bottom: -50px; /* Adjust as needed */
-    left: 0; /* Adjust as needed */
+
     font-size: 13px;
     line-height: 20px;
     font-weight: 400;
