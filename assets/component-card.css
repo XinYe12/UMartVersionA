@@ -47,18 +47,14 @@
   float: left;
   width: 100%;
 }
-.products .product-form,
-.products .product-form__buttons,
-.template-search .product-form {
-  width: 100%;
-  position: absolute;
-  top: 90%; /* Adjust as needed */
-  left: 0; /* Adjust as needed */
-  right: 0; /* Adjust as needed */
-  text-align: left;
-  /* Other styles... */
-}
+.products .product-form, .products .product-form__buttons, .template-search .product-form {
 
+  width: 100%;
+  position: relative;
+  inset: auto 0 0;
+  float: left;
+  text-align: left;
+}
 
 #ProductGridContainer .item .item.list-group-item .card-information__wrapper .product-form {
     margin-top: 7px;
