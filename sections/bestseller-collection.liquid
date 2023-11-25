@@ -156,25 +156,27 @@
          <product-form class="product-form">
            {%- form 'product', product, id: product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-           <div class="product-form__buttons">
-             {% if product.variants.size == 1 %}
-             <button
-                     type="submit"
-                     name="add"
-                     class="product-form__submit button"
-                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %} >
-               {%- if product.selected_or_first_available_variant.available -%}
-               {{ 'products.product.add_to_cart' | t }}
-               {%- else -%}
-               {{ 'products.product.sold_out' | t }}
-               {%- endif -%}
-             </button>
-             {% else %}
-               <a href="{{ product.url | within: collection }}" class="product-form__submit button select-button" title="{{ 'products.product.select_option' | t }}">
-                 {{ 'products.product.select_option' | t }}
-               </a>
-             {% endif %}
-           </div>
+           <div class = "button_container">
+              <div class="product-form__buttons">
+                {% if product.variants.size == 1 %}
+                <button
+                        type="submit"
+                        name="add"
+                        class="product-form__submit button"
+                        {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %} >
+                  {%- if product.selected_or_first_available_variant.available -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                  {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </button>
+                {% else %}
+                  <a href="{{ product.url | within: collection }}" class="product-form__submit button select-button" title="{{ 'products.product.select_option' | t }}">
+                    {{ 'products.product.select_option' | t }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
            {%- endform -%}
          </product-form>
      

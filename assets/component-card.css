@@ -47,14 +47,31 @@
   float: left;
   width: 100%;
 }
+.product-form .button_container{
+  position: relative;
+}
+
 .products .product-form, .products .product-form__buttons, .template-search .product-form {
 
-  width: 100%;
-  position: relative;
+  width: 95%;
+  left: 2%;
+  top: 150%;
+  position: absolute;
   inset: auto 0 0;
   float: left;
   text-align: left;
 }
+@media (max-width: 768px) {
+  .container .product-form,
+  .container .product-form__buttons,
+  .container .template-search .product-form {
+    /* Adjust positioning for smaller screens */
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+}
+
 
 #ProductGridContainer .item .item.list-group-item .card-information__wrapper .product-form {
     margin-top: 7px;
