@@ -29,8 +29,11 @@
 
 
 .card-information__text.h5 a {
+    position: absolute;
+    bottom: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
     font-size: 13px;
-  line-height: 20px;
+    line-height: 20px;
     font-weight: 400;
     letter-spacing: .5px;
     text-transform: capitalize;
