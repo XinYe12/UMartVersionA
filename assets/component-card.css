@@ -56,9 +56,7 @@
   width: 95%;
   left: 2%;
   top: 150%;
-  position: absolute;
-  inset: auto 0 0;
-  float: left;
+  position: absolute; 
   text-align: left;
 }
 @media (max-width: 768px) {
