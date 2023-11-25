@@ -347,6 +347,16 @@
   line-height: 22px;
   text-align: left;
 }
+.card-information .title-container{
+  line-height: 1.2em; /* Adjust as needed */
+  height: 2.4em; /* 2 lines at 1.2em line height */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-decoration: none; /* Optionally remove underlines from links */
+}
+
 .card-information .card-information__text.h5 {
      font-size: 13px;
     font-weight: 400;

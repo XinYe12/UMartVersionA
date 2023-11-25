@@ -144,11 +144,13 @@
           	<div class="caption-with-letter-spacing light">{{ product.vendor }}</div>
        	 {%- endif -%}
          {%- if product.featured_media -%}
+          <div class="title-container">
             <span class="card-information__text h5">
              <a href="{{ product.url | default: '#' }}">
                 {{ product.title | strip_html }}
              </a>
             </span>
+          </div>
          {%- endif -%} 
         {% render 'price', product: product, price_class: '' %}
        
