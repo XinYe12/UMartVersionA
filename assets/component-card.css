@@ -347,7 +347,7 @@
   line-height: 22px;
   text-align: left;
 }
-.card-information .title-container{
+.title-container{
   line-height: 1.2em; /* Adjust as needed */
   height: 2.4em; /* 2 lines at 1.2em line height */
   overflow: hidden;
