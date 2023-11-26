@@ -42,12 +42,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.card-information.h5 a .extra-space{
-  margin-bottom: 20px;
-}
-.extra-space{
-  margin-bottom: 20px;
-}
+
 
 .price {
   float: left;
