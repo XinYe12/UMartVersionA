@@ -305,7 +305,9 @@
             																<span class="card-information__text h5">
                                                                                <a href="{{ product.url | default: '#' }}">
                                                                                   {{ product.title | escape }}
-                                                                               </a>
+                                                                                  {{ product.title | escape }}
+
+                                                                                  </a>
             																</span>
                                                                       	{%- endif -%}
         																{% comment %} TODO: metafield {% endcomment %}
