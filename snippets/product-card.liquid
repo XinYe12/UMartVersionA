@@ -105,7 +105,7 @@ Usage:
       <span class="card-information__text h5">
         <a href="{{ product_card_product.url | default: '#' }}">
           {{ product_card_product.title | strip_html | truncatewords: 10 }}
-          {{}}
+          <div class="extra-space"></div>
         </a>
       </span>
       {%- endif -%}          
