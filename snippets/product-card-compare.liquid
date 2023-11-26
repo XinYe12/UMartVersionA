@@ -30,8 +30,8 @@
             <div class="card-information">
               <span class="card-information__text h5"><a href="{{ product.url }}" class="full-unstyled-link">
                 {{ product.title }}
-                {{ product.title }}
-              </a></span>
+                {% assign extra_line = "\n" %}
+                {{ extra_line }}              </a></span>
               {% render 'price' %}
             </div>
           </div>
