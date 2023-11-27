@@ -141,7 +141,12 @@
          {%- endif -%}  
 
         <div class="product__type">
-            <span class="available js-variant-availability">{%- if product.available -%}In Stock{%- else -%}Out Of Stock{%- endif -%}</span>
+            <span class="available js-variant-availability">
+              {%- if product.available -%}
+                In Stock
+              {%- else -%}
+                <span class="out-of-stock">Out Of Stock{%- endif -%}</span>
+            </span>
          </div>
         
         {%- if section.settings.show_rating -%}
