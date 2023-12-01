@@ -325,6 +325,12 @@
           "using_translated_handles": true,
           "custom_script_and_style": "<script><\/script>\n<style><\/style>"
         }
+      },
+      "11349500561483629931": {
+        "type": "shopify:\/\/apps\/Notify Me\/blocks\/app-embed\/b399b727-6c85-44fc-9e21-63114bd72054",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   }
