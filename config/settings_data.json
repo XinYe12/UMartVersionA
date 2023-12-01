@@ -314,18 +314,10 @@
 
     ],
     "blocks": {
-      "5830052920240459932": {
-        "type": "shopify:\/\/apps\/purple-dot-trusted-pre-order\/blocks\/app-embed-block\/66fbb572-e304-4000-9eec-ce923e515d92",
+      "11349500561483629931": {
+        "type": "shopify:\/\/apps\/Notify Me\/blocks\/app-embed\/b399b727-6c85-44fc-9e21-63114bd72054",
         "disabled": false,
         "settings": {
-          "add_waitlist_info": false,
-          "quick_add_title": "",
-          "quick_add_size_selector": "",
-          "quick_add_button_selector": "",
-          "quick_add_disabled_class": "",
-          "collection_item_selector": "",
-          "hide": "",
-          "pdp_hide": ""
         }
       }
     }
