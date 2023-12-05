@@ -381,6 +381,67 @@
           {%- when 'buy_buttons' -%}
             <product-form class="product-form">
               {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                
+                {%- liquid
+                    assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+                    assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+
+                    if current_selling_plan_allocation == nil and current_variant.requires_selling_plan
+                      assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+                    endif
+
+                    assign offer = current_selling_plan_allocation | default: current_variant
+                    -%}
+
+                    {{ product.title }}
+                    {{ offer.price | money }}
+
+                    {% if offer.compare_at_price > offer.price %}
+                      <s>{{ offer.compare_at_price | money }}</s>
+                      <span>{% if offer.selling_plan %}Purchase options{% else %}Sale{% endif %}</span>
+                    {% endif %}
+
+                    {% form 'product', product %}
+                      <input type="hidden" name="id" value="{{ current_variant.id }}">
+                      <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
+
+                      <fieldset>
+                        <legend>Product options</legend>
+
+                        {% for option in product.options_with_values %}
+                          <label>{{ option.name }}</label>
+
+                          <select>
+                            {% for value in option.values %}
+                              <option>{{ value }}</option>
+                            {% endfor %}
+                          </select>
+                        {% endfor %}
+                      </fieldset>
+
+                      <!-- Pass the product object as JSON so it can be used to update selling plan information using JavaScript -->
+                      <fieldset class="selling-plan-fieldset" data-product={{ product | json }}>
+                        <legend>Purchase options</legend>
+                        {% unless product.requires_selling_plan %}
+                        <input type="radio" name="purchase_option"> One-time purchase
+                        {% endunless %}
+
+                        {% for group in product.selling_plan_groups %}
+                          <input type="radio" name="purchase_option"> {{ group.name}}
+
+                          {% for option in group.options %}
+                            <label>{{ option.name }}</label>
+
+                            <select data-position="{{ option.position }}">
+                              {% for value in option.values %}
+                                <option>{{ value }}</option>
+                              {% endfor %}
+                            </select>
+                          {% endfor %}
+                        {% endfor %}
+                      </fieldset>
+                    {% endform %}
+
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 <div class="product-form__buttons">
                   <button
@@ -397,6 +458,7 @@
                   </button>
                   
                 </div>
+                
               <div class="product-form__buttons_buy">
                   {%- if block.settings.show_dynamic_checkout -%}
                     {{ form | payment_button }}
