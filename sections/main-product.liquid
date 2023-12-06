@@ -384,7 +384,7 @@
                 
                 {%- if product.requires_selling_plan-%}
                   requires selling plan
-                  {% elsif product.requires_selling_plan==false %}
+                  {% else %}
                     does not require selling plan
                 {% endif %}
 
