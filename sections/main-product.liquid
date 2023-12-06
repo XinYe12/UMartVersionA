@@ -396,9 +396,10 @@
                   {% else %}
                   {%- liquid 
                     assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+                    assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
                   -%}
                  
-                    <p>No selling plans available for this product.  {{current_variant.id}}</p>
+                    <p>No selling plans available for this product.  {{current_selling_plan_allocation}}</p>
 
                   {% endif %}
 
