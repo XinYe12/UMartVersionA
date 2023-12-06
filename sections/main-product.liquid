@@ -382,13 +382,21 @@
             <product-form class="product-form">
               {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                 
-                {%- if product.requires_selling_plan-%}
-                  requires selling plan
-                  <div>{{ current.selling_plan_allocation.selling_plan.id | default: '' }}</div>
+                {% assign product_selling_plans = product.selling_plan_groups %}
+                  {% if product_selling_plans.size > 0 %}
+                    <ul>
+                      {% for selling_plan_group in product_selling_plans %}
+                        {% for selling_plan_option in selling_plan_group.options %}
+                          {% for value in selling_plan_option.values %}
+                            <li>{{ value.selling_plan.id }}</li>
+                          {% endfor %}
+                        {% endfor %}
+                      {% endfor %}
+                    </ul>
                   {% else %}
-                    does not require selling plan
-                    <div>{{ current.selling_plan_allocation.selling_plan.id | default: '' }}</div>
-                {% endif %}
+                    <p>No selling plans available for this product.</p>
+                  {% endif %}
+
 
 
                   
