@@ -384,8 +384,10 @@
                 
                 {%- if product.requires_selling_plan-%}
                   requires selling plan
+                  <div>{{ current.selling_plan_allocation.selling_plan.id | default: '' }}</div>
                   {% else %}
                     does not require selling plan
+                    <div>{{ current.selling_plan_allocation.selling_plan.id | default: '' }}</div>
                 {% endif %}
 
 
