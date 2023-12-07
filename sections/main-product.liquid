@@ -420,7 +420,7 @@
                     -%}
 
                     {{ product.title }}
-                    {{ offer.price | money }}
+                    {{ offer.price | money }}{{offer.id}}
 
                     {% if offer.compare_at_price > offer.price %}
                       <s>{{ offer.compare_at_price | money }}</s>
@@ -429,7 +429,7 @@
 
                     {% form 'product', product %}
                       <input type="hidden" name="id" value="{{ current_variant.id }}">
-                      variant ID: {{current_variant.id}}
+                      
                       <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
 
                       <fieldset>
