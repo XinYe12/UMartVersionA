@@ -46,6 +46,10 @@
                       >
                     {% endif %}
                   </td>
+                  {% if line_item.selling_plan_allocation %}
+                    <p class="selling-plan">{{ line_item.selling_plan_allocation.selling_plan.name }}</p>
+                  {% endif %}
+                  
 
                   <td class="cart-item__details">
                     {%- if section.settings.show_vendor -%}
