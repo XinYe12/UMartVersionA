@@ -413,7 +413,7 @@
                     assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
 
                     if current_selling_plan_allocation == nil and current_variant.requires_selling_plan
-                      assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+                      assign current_selling_plan_allocation = current_variant.selling_plan_allocation | first
                     endif
 
                     assign offer = current_selling_plan_allocation | default: current_variant
@@ -431,7 +431,7 @@
                       <input type="hidden" name="id" value="{{ current_variant.id }}">
                       
                       <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
-                      {{ current_selling_plan_allocation.selling_plan.id | default: '' }}
+                      {{current_variant.selling_plan_allocation.selling_plan.id }}
                       <fieldset>
                         <legend>Product options</legend>
 
