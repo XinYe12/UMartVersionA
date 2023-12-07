@@ -382,17 +382,144 @@
             <product-form class="product-form">
               {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                 
-                {% assign product_selling_plans = product.selling_plan_group %}
-                  <div>product_selling_plan.id: {{product_selling_plans.id}} {{product.id}}</div>
-                
-                  {%- liquid 
-                    assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
-                    assign current_selling_plan_groups = current_variant.selling_plan_groups
-                  -%}
+                {%- liquid
+                      assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+                      assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+
+                      if current_selling_plan_allocation == nil and current_variant.requires_selling_plan
+                        assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+                      endif
+
+                      assign offer = current_selling_plan_allocation | default: current_variant
+                      -%}
+
+                      {{ product.title }}
+                      {{ offer.price | money }}
+
+                      {% if offer.compare_at_price > offer.price %}
+                        <s>{{ offer.compare_at_price | money }}</s>
+                        <span>{% if offer.selling_plan %}Purchase options{% else %}Sale{% endif %}</span>
+                      {% endif %}
+
+                      {% form 'product', product %}
+                        <input type="hidden" name="id" value="{{ current_variant.id }}">
+                        <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
+
+                        <fieldset>
+                          <legend>Product options</legend>
+
+                          {% for option in product.options_with_values %}
+                            <label>{{ option.name }}</label>
+
+                            <select>
+                              {% for value in option.values %}
+                                <option>{{ value }}</option>
+                              {% endfor %}
+                            </select>
+                          {% endfor %}
+                        </fieldset>
+
+                        <!-- Pass the product object as JSON so it can be used to update selling plan information using JavaScript -->
+                        <fieldset class="selling-plan-fieldset" data-product={{ product | json }}>
+                          <legend>Purchase options</legend>
+                          {% unless product.requires_selling_plan %}
+                          <input type="radio" name="purchase_option"> One-time purchase
+                          {% endunless %}
+
+                          {% for group in product.selling_plan_groups %}
+                            <input type="radio" name="purchase_option"> {{ group.name}}
+
+                            {% for option in group.options %}
+                              <label>{{ option.name }}</label>
+
+                              <select data-position="{{ option.position }}">
+                                {% for value in option.values %}
+                                  <option>{{ value }}</option>
+                                {% endfor %}
+                              </select>
+                            {% endfor %}
+                          {% endfor %}
+                        </fieldset>
+                      {% endform %}
+                <script>
+                  var sellingPlanContainer = document.querySelector('.selling-plan-fieldset')
+                  var product = JSON.parse(sellingPlanContainer.dataset.product);
+                  var productForm = document.querySelector('.shopify-product-form');
+
+                  var findSelectedVariant = function() {
+                    var selectedVariantId = parseInt(document.querySelector('.shopify-product-form [name="id"]').value);
+                    var selectedVariant;
+
+                    for (var i = 0; i < product.variants.length; i++) {
+                      if (product.variants[i].id === selectedVariantId) {
+                        selectedVariant = product.variants[i];
+                        break;
+                      }
+                    }
+
+                    return selectedVariant;
+                  }
+
+                  // Watch for variant selection to update selling plan option selectors
+                  productForm.addEventListener('change', function() {
+                    var selectedVariant = findSelectedVariant();
+                    var availableSellingPlanAllocations = selectedVariant.selling_plan_allocations;
+
+                    // Update the selling plan option selectors based on the available selling plan allocations
+                    // for the selected variant
+                  });
+                  var sellingPlanContainer = document.querySelector('.selling-plan-fieldset')
+                  var product = JSON.parse(sellingPlanContainer.dataset.product);
+                  var productForm = document.querySelector(‘.shopify-product-form’);
+
+                  var findSelectedVariant = function() {
+                    var selectedVariantId = parseInt(document.querySelector('.shopify-product-form [name="id"]').value);
+                    var selectedVariant;
+
+                    for (var i = 0; i < product.variants.length; i++) {
+                      if (product.variants[i].id === selectedVariantId) {
+                        selectedVariant = product.variants[i];
+                        break;
+                      }
+                    }
+
+                    return selectedVariant;
+                  }
+
+                  // Watch for variant selection to update selling plan option selectors
+                  productForm.addEventListener('change', function() {
+                    var selectedVariant = findSelectedVariant();
+                    var availableSellingPlanAllocations = selectedVariant.selling_plan_allocations;
+
+                    // Update the selling plan option selectors based on the available
+                    // selling plan allocations for the selected variant
+                  });
+
+                  // Watch for selling plan option change to update the selected selling plan
+                  sellingPlanContainer.querySelectorAll('select').forEach(function(optionSelector) {
+                    optionSelector.addEventListener('change', function() {
+                      var selectedVariant = findSelectedVariant();
+                      var availableSellingPlanAllocations = selectedVariant.selling_plan_allocations;
+                      var selectedSellingPlanId;
+
+                      for (var i = 0; i < availableSellingPlanAllocations.length; i++) {
+                        var sellingPlan = availableSellingPlanAllocations[i].selling_plan;
+                        var matchingSellingPlan = false;
+
+                        // Logic to find matching selling plan
+
+                        if (matchingSellingPlan) {
+                          selectedSellingPlanId = sellingPlan.id;
+                        }
+                      }
+
+                      selectedSellingPlanId = (typeof selectedSellingPlanId === 'undefined') ? '' : selectedSellingPlanId;
+                      document.querySelector('[name="selling_plan"]').value = selectedSellingPlanId;
+                    });
+                  });
 
 
-    
-
+                                  </script>
 
 
                   
