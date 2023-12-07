@@ -427,7 +427,7 @@
                         <input type="radio" name="purchase_option"> One-time purchase
                         {% endunless %}
 
-                        {% for group in product.selling_plan_groups %}
+                        {% for group in product.selling_plan_group %}
                           <input type="radio" name="purchase_option"> {{ group.name}}
 
                           {% for option in group.options %}
