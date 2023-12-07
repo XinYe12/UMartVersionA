@@ -383,7 +383,7 @@
               {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                 
                 {% assign product_selling_plans = product.selling_plan_groups %}
-                  <div>product_selling_plan.id: {{product_selling_plans.id}}</div>
+                  <div>product_selling_plan.id: {{product_selling_plans.id}} {{product.id}}</div>
                   {% if product_selling_plans.size > 0 %}
                     <ul>
                       {% for selling_plan_group in product_selling_plans %}
