@@ -423,10 +423,7 @@
                       <!-- Pass the product object as JSON so it can be used to update selling plan information using JavaScript -->
                       <fieldset class="selling-plan-fieldset" data-product={{ product | json }}>
                         <legend>Purchase options</legend>
-                        {% unless product.requires_selling_plan %}
-                        <input type="radio" name="purchase_option"> One-time purchase
-                        {% endunless %}
-
+                        
                         {% for group in product.selling_plan_group %}
                           <input type="radio" name="purchase_option"> {{ group.name}}
 
