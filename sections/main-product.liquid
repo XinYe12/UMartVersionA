@@ -324,6 +324,7 @@
                   {%- endfor -%}
                   <script type="application/json" id="variants-data">
                     {{ product.variants | json }}
+                    {{ product.variants.selling_plan_allocations.selling_plan_id }}
                     
                   </script>
                   <script>
