@@ -322,10 +322,23 @@
                         </div> 
                      {% endif %}
                   {%- endfor -%}
-                  <script type="application/json">
+                  <script type="application/json" id="variants-data">
                     {{ product.variants | json }}
-                    {{ product.variants.selling_plan_id | json }}
+                    
                   </script>
+                  <script>
+                    // Retrieve the JSON data from the script tag
+                    var variantsJson = document.getElementById('variants-data').textContent;
+                    
+                    // Parse the JSON data into a JavaScript object
+                    var variants = JSON.parse(variantsJson);
+
+                    // Access the selling_plan_id of the first variant (for example)
+                    var sellingPlanId = variants[0].selling_plan_allocations[0].selling_plan_id;
+
+                    // Log or use the selling_plan_id as needed
+                    console.log("Selling Plan ID:", sellingPlanId);
+                </script>
                 </variant-radios>
               {%- else -%}
                 <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
