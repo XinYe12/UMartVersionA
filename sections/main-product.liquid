@@ -325,15 +325,7 @@
                   <script type="application/json" id="variants-data">
                     {{ product.variants | json }}
                   </script>
-                  {% assign variantsData = product.variants | json %}
-
-                  {% for variant in variantsData %}
-                    {% for allocation in variant.selling_plan_allocations %}
-                      {% assign sellingPlanId = allocation.selling_plan_id %}
-                      <!-- Use sellingPlanId as needed -->
-                      seeling plan id: {{ sellingPlanId }}
-                    {% endfor %}
-                  {% endfor %}
+                 
 
                 </variant-radios>
               {%- else -%}
@@ -393,17 +385,15 @@
             <product-form class="product-form">
               {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
               
-                {%- liquid
-                assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
-                assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
-               
-                if current_selling_plan_allocation == nil and current_variant.requires_selling_plan
-                 assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
-                endif
-               
-                assign offer = current_selling_plan_allocation | default: current_variant
-               -%}
-               <div>it goes like this: {{ selling_plan_id }}{{ current_variant.id }}</div>
+                {% assign variantsData = product.variants | json %}
+
+                {% for variant in variantsData %}
+                  {% for allocation in variant.selling_plan_allocations %}
+                    {% assign sellingPlanId = allocation.selling_plan_id %}
+                    <!-- Use sellingPlanId as needed -->
+                    seeling plan id: {{ sellingPlanId }}
+                  {% endfor %}
+                {% endfor %}
                
 
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
