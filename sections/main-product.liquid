@@ -392,8 +392,8 @@
                
                 assign offer = current_selling_plan_allocation | default: current_variant
                -%}
-               <div>it goes like this: {{current_selling_plan_allocation}}{{current_variant.id}}</div>
-               <script>console.log({{current_selling_plan_allocation}});</script>
+               <div>it goes like this: {{selling_plan_id}}{{current_variant.id}}</div>
+               
 
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 <div class="product-form__buttons">
