@@ -324,7 +324,7 @@
                   {%- endfor -%}
                   <script type="application/json">
                     {{ product.variants | json }}
-                    {{ product.variants | json }}
+                    {{ product.variants.selling_plan_id | json }}
                   </script>
                 </variant-radios>
               {%- else -%}
@@ -352,7 +352,6 @@
                   {%- endfor -%}
 
                   <script type="application/json">
-                    {{ product.variants | json }}
                     {{ product.variants | json }}
                   </script>
              
