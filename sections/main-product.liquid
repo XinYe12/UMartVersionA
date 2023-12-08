@@ -324,7 +324,6 @@
                   {%- endfor -%}
                   <script type="application/json" id="variants-data">
                     {{ product.variants | json }}
-                    {{ product.variants.selling_plan_allocations.selling_plan_id | json}}
                     
                   </script>
                   <script>
@@ -335,10 +334,20 @@
                     var variants = JSON.parse(variantsJson);
 
                     // Access the selling_plan_id of the first variant (for example)
-                    var sellingPlanId = variants[0].selling_plan_allocations[0].selling_plan_id;
+                    // Loop through each variant
+                    variants.forEach(function (variant) {
+                        // Check if variant has selling_plan_allocations
+                        if (variant.selling_plan_allocations) {
+                            // Loop through each selling_plan_allocation
+                            variant.selling_plan_allocations.forEach(function (allocation) {
+                                // Access the selling_plan_id and store in the array
+                                allSellingPlanIds.push(allocation.selling_plan_id);
+                            });
+                        }
+                    });
 
-                    // Log or use the selling_plan_id as needed
-                    console.log("Selling Plan ID:", sellingPlanId);
+                    // Log or use the allSellingPlanIds array as needed
+                    console.log("All Selling Plan IDs:", allSellingPlanIds);
                 </script>
                 </variant-radios>
               {%- else -%}
