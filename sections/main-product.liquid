@@ -323,7 +323,7 @@
                      {% endif %}
                   {%- endfor -%}
                   <script type="application/json">
-                    {{ product | json }}
+                    {{ product.variants | json }}
                   </script>
                 </variant-radios>
               {%- else -%}
@@ -351,7 +351,7 @@
                   {%- endfor -%}
 
                   <script type="application/json">
-                    {{ product | json }}
+                    {{ product.variants | json }}
                   </script>
              
                 </variant-selects>
