@@ -332,8 +332,8 @@
                     
                     // Parse the JSON data into a JavaScript object
                     var variants = JSON.parse(variantsJson);
+                    var allSellingPlanIds = [];
 
-                    // Access the selling_plan_id of the first variant (for example)
                     // Loop through each variant
                     variants.forEach(function (variant) {
                         // Check if variant has selling_plan_allocations
