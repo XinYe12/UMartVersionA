@@ -388,7 +388,11 @@
                  {% assign variantsData = product.variants  %}
  
                   {% for variant in variantsData %}
-                    variant id: {{ variant.id }}
+                    {{ variant.id }}
+                    {% assign allocations = variant.selling_plan_allocations %}
+                    {% for allocation in allocations %}
+                      selling plan id: {{ selling_plan_id }}
+                    {% endfor %}
                   {% endfor %}
                
 
