@@ -387,8 +387,11 @@
               
                  {% assign variantsData = product.variants  %}
  
-                  {% assign variantID = variantsData[0].id %}
-                  {{ variantID }}
+                  {% for variant in variantsData %}
+                    variant id: {{ variant.id }}
+                  {% endfor %}
+               
+
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 <div class="product-form__buttons">
                   <button
