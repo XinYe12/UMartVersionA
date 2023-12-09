@@ -389,10 +389,10 @@
  
                   {% for variant in variantsData %}
                     {{ variant.id }}
-                    {% assign allocations = variant.selling_plan_allocations %}
-                    {% for allocation in allocations %}
-                      selling plan id: {{ allocation.selling_plan_id }}
-                    {% endfor %}
+                    {% assign allocation = variant.selling_plan_allocations[0] %}
+                    
+                    selling plan id: {{ allocation.selling_plan_id }}
+                 
                   {% endfor %}
                
 
