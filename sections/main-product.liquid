@@ -386,7 +386,7 @@
               {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
               
                  {% assign variantsData = product.variants | json %}
-                 {{ product.variants }}
+ 
                   {% for variant in variantsData %}
                     {{variant}}
                     {% for allocation in variant.selling_plan_allocations %}
