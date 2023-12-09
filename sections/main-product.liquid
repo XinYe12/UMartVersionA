@@ -390,7 +390,7 @@
                   {% for variant in variantsData %}
                     {{ variant.options }}
                     {% assign allocation = variant.selling_plan_allocations[0] %}
-                    allocation: {{ allocation.selling_plan_id }}
+                    allocation: {{ allocation.selling_plan.id }}
                  
                   {% endfor %}
                
