@@ -388,7 +388,7 @@
                  {% assign variantsData = product.variants | json %}
  
                   {% for variant in variantsData %}
-                
+                    {{variant}}
                     {% for allocation in variant.selling_plan_allocations %}
                       {% assign sellingPlanId = allocation.selling_plan_id %}
                       <!-- Use sellingPlanId as needed -->
