@@ -389,7 +389,9 @@
  
                   {% for variant in variantsData %}
                     {% assign selling_plan_allocations = variant.selling_plan_allocations | json %}
-                    {{ variant.id  | json}}
+                    {% assign variants = product.variants | json %}
+                    {% assign firstVariantSellingPlanId = variants[0].selling_plan_allocations[0].selling_plan_id %}
+                    {{ firstVariantSellingPlanId }}
                     {% for allocation in selling_plan_allocations %}
                       {% assign sellingPlanId = allocation.selling_plan_id | json %}
                       {{ allocation | json }}
