@@ -392,8 +392,9 @@
                     {{ selling_plan_allocations | json}}
                     {% for allocation in selling_plan_allocations %}
                       {% assign sellingPlanId = allocation.selling_plan_id | json %}
+                      {{ allocation | json }}
                       <!-- Use sellingPlanId as needed -->
-                      selling plan id: {{ sellingPlanId }}
+                      selling plan id: {{ sellingPlanId | json}}
                       
                     {% endfor %}
                   {% endfor %}
