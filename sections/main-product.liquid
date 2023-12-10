@@ -390,7 +390,7 @@
                     
                     {% assign allocation = variant.selling_plan_allocations[0] %}
                     {% for allo in variant.selling_plan_allocations %}
-                      selling plan id: {{ allo.selling_plan.id }}
+                      selling plan name: {{ allo.selling_plan.name }}
                     {% endfor %}
                   {% endfor %}
                 </div>
@@ -412,7 +412,7 @@
                   
                 </div>
 
-              <div class="product-form__buttons_buy">
+                <div class="product-form__buttons_buy">
                   {%- if block.settings.show_dynamic_checkout -%}
                     {{ form | payment_button }}
                   {%- endif -%}
