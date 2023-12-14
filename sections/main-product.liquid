@@ -407,6 +407,20 @@
                  <input type="hidden" name="id" value="{{ current_variant.id }}">
                  <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
                
+                 <fieldset>
+                   <legend>Product options</legend>
+               
+                   {% for option in product.options_with_values %}
+                     <label>{{ option.name }}</label>
+               
+                     <select>
+                       {% for value in option.values %}
+                         <option>{{ value }}</option>
+                       {% endfor %}
+                     </select>
+                   {% endfor %}
+                 </fieldset>
+               
                  <!-- Pass the product object as JSON so it can be used to update selling plan information using JavaScript -->
                  <fieldset class="selling-plan-fieldset" data-product={{ product | json }}>
                    <legend>Purchase options</legend>
@@ -427,7 +441,33 @@
                    {% endfor %}
                  </fieldset>
                {% endform %}
-               
+               <script>var sellingPlanContainer = document.querySelector('.selling-plan-fieldset')
+                var product = JSON.parse(sellingPlanContainer.dataset.product);
+                var productForm = document.querySelector('.shopify-product-form');
+                
+                var findSelectedVariant = function() {
+                  var selectedVariantId = parseInt(document.querySelector('.shopify-product-form [name="id"]').value);
+                  var selectedVariant;
+                
+                  for (var i = 0; i < product.variants.length; i++) {
+                    if (product.variants[i].id === selectedVariantId) {
+                      selectedVariant = product.variants[i];
+                      break;
+                    }
+                  }
+                
+                  return selectedVariant;
+                }
+                
+                // Watch for variant selection to update selling plan option selectors
+                productForm.addEventListener('change', function() {
+                  var selectedVariant = findSelectedVariant();
+                  var availableSellingPlanAllocations = selectedVariant.selling_plan_allocations;
+                
+                  // Update the selling plan option selectors based on the available selling plan allocations
+                  // for the selected variant
+                });
+                </script>
 
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 <div class="product-form__buttons">
