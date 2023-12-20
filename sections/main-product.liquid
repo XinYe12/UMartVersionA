@@ -402,7 +402,7 @@
                  <s>{{ offer.compare_at_price | money }}</s>
                  <span>{% if offer.selling_plan %}Purchase options{% else %}Sale{% endif %}</span>
                {% endif %}
-               
+               <!--------------------------- these are my purchase options --------------------------->
                {% form 'product', product %}
                  <input type="hidden" name="id" value="{{ current_variant.id }}">
                  <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
@@ -468,17 +468,24 @@
                   // for the selected variant
                 });
                 </script>
+               <!--------------------------- END these are my purchase options END --------------------------->
 
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 <div class="product-form__buttons">
                   <button
                     type="submit"
                     name="add"
-                    class="product-form__submit button {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                    class="product-form__submit button 
+                    
+                  {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}
+                      button--secondary
+                  {% else %}
+                      button--primary
+                  {% endif %}"
                   {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                   >
                       {%- if product.selected_or_first_available_variant.available -%}
-                        {{ 'products.product.add_to_cart' | t }}
+   
                       {%- else -%}
                         {{ 'products.product.sold_out' | t }}
                       {%- endif -%}
