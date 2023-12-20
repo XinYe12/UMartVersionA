@@ -64,12 +64,6 @@
             "lb-product-id": ""
           }
         },
-        "ef7f9dfa-75b0-4798-80fb-d21c1535e6c1": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
-        },
         "a2f219df-082d-4591-861f-8d7760e59a02": {
           "type": "collapsible_tab",
           "disabled": true,
@@ -129,7 +123,6 @@
         "variant_picker",
         "quantity_selector",
         "65c6980c-2b98-4de8-9115-074a5c305b31",
-        "ef7f9dfa-75b0-4798-80fb-d21c1535e6c1",
         "a2f219df-082d-4591-861f-8d7760e59a02",
         "f925313d-91a6-40e1-923a-5f1bc294c779",
         "6907ed9d-6cfc-42b2-801e-da9311d27b68",
