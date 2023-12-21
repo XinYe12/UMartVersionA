@@ -420,7 +420,9 @@
                      </select>
                    {% endfor %}
                  </fieldset>
-               
+                 {% if product.metafields.custom.is_preorder.value == true %}
+                    preorder product preorder product 
+                 {% endif %}
                  <!-- Pass the product object as JSON so it can be used to update selling plan information using JavaScript -->
                  <fieldset class="selling-plan-fieldset" data-product={{ product | json }}>
                    <legend>Purchase options</legend>
