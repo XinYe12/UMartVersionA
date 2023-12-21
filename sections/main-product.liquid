@@ -420,9 +420,7 @@
                      </select>
                    {% endfor %}
                  </fieldset>
-                 {% if product.metafields.custom.is_preorder.value == true %}
-                    preorder product preorder product 
-                 {% endif %}
+        
                  <!-- Pass the product object as JSON so it can be used to update selling plan information using JavaScript -->
                  <fieldset class="selling-plan-fieldset" data-product={{ product | json }}>
                    <legend>Purchase options</legend>
@@ -526,11 +524,16 @@
                   {% endif %}"
                   {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                   >
+                    {% unless product.metafields.custom.is_preorder.value == true %}
+
                       {%- if product.selected_or_first_available_variant.available -%}
                         {{ 'products.product.add_to_cart' | t }}
                       {%- else -%}
                         {{ 'products.product.sold_out' | t }}
                       {%- endif -%}
+                    {% else %}
+                      preorder button
+                    {%- endunless -%}
                   </button>
                   
                 </div>
