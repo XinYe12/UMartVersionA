@@ -407,19 +407,6 @@
                  <input type="hidden" name="id" value="{{ current_variant.id }}">
                  <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
                
-                 <fieldset>
-                   <legend>Product options</legend>
-               
-                   {% for option in product.options_with_values %}
-                     <label>{{ option.name }}</label>
-               
-                     <select>
-                       {% for value in option.values %}
-                         <option>{{ value }}</option>
-                       {% endfor %}
-                     </select>
-                   {% endfor %}
-                 </fieldset>
         
                  <!-- Pass the product object as JSON so it can be used to update selling plan information using JavaScript -->
                  <fieldset class="selling-plan-fieldset" data-product={{ product | json }}>
