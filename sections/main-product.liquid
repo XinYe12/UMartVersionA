@@ -513,10 +513,12 @@
                   
                 </div>
                 <script>
-                  document.getElementById('customCheckoutButton').addEventListener('click', function() {
-                    var sellingPlanId = 'gid://shopify/SellingPlan/4077781241'; // Replace with your selling plan ID
-                    var variantId = 'gid://shopify/ProductVariant/44183438459129'; // Replace with your product variant ID
-                    var quantity = 1; // Set desired quantity
+                  document.querySelector('.product-form').addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevents the default form submission action
+
+                    var variantId = document.querySelector('[name="id"]').value; // Get the variant ID
+                    var sellingPlanId = document.getElementById('sellingPlanId').value; // Get the selling plan ID
+                    var quantity = parseInt(document.querySelector('[name="quantity"]').value); // Get the quantity
 
                     var formData = {
                       'items': [{
@@ -532,15 +534,18 @@
                         'Content-Type': 'application/json'
                       },
                       body: JSON.stringify(formData)
-                    }).then(function(response) {
-                      return response.json();
-                    }).then(function(cart) {
-                      window.location.href = '/checkout';
-                    }).catch(function(error) {
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                      console.log('Item added to cart', data);
+                      // Optionally, update cart UI here
+                    })
+                    .catch((error) => {
                       console.error('Error:', error);
                     });
                   });
-                </script>
+                  </script>
+
 
                 <div class="product-form__buttons_buy">
                   {%- if block.settings.show_dynamic_checkout -%}
