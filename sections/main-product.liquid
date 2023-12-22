@@ -507,11 +507,40 @@
                         {{ 'products.product.sold_out' | t }}
                       {%- endif -%}
                     {% else %}
-                      preorder
+                      <button id="customCheckoutButton">Buy with Plan</button>
                     {%- endunless -%}
                   </button>
                   
                 </div>
+                <script>
+                  document.getElementById('customCheckoutButton').addEventListener('click', function() {
+                    var sellingPlanId = 'YOUR_SELLING_PLAN_ID'; // Replace with your selling plan ID
+                    var variantId = 'YOUR_VARIANT_ID'; // Replace with your product variant ID
+                    var quantity = 1; // Set desired quantity
+
+                    var formData = {
+                      'items': [{
+                        'id': variantId,
+                        'quantity': quantity,
+                        'selling_plan': sellingPlanId
+                      }]
+                    };
+
+                    fetch('/cart/add.js', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(formData)
+                    }).then(function(response) {
+                      return response.json();
+                    }).then(function(cart) {
+                      window.location.href = '/checkout';
+                    }).catch(function(error) {
+                      console.error('Error:', error);
+                    });
+                  });
+                </script>
 
                 <div class="product-form__buttons_buy">
                   {%- if block.settings.show_dynamic_checkout -%}
