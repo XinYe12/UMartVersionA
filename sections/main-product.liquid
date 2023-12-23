@@ -511,7 +511,7 @@
                   </button>
                   
                 </div>
-                {% unless product.metafields.custom.is_preorder.value == true %}
+                {% if product.metafields.custom.is_preorder.value == true %}
                   <!-- Preorder Button -->
                   Jesus help me
                   <button id="customCheckoutButton" >Preorder</button>
