@@ -514,7 +514,7 @@
                 {% unless product.metafields.custom.is_preorder.value == true %}
                   <!-- Preorder Button -->
                   <button id="customCheckoutButton" class="button button--primary">Preorder</button>
-                
+                {% endunless %}
                   <script>
                       document.querySelector('.product-form').addEventListener('submit', function(e) {
                         e.preventDefault(); // Prevents the default form submission action
