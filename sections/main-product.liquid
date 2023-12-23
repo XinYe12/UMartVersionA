@@ -499,53 +499,56 @@
                   {% endif %}"
                   {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                   >
-                    {% unless product.metafields.custom.is_preorder.value == true %}
+                   
 
                       {%- if product.selected_or_first_available_variant.available -%}
                         {{ 'products.product.add_to_cart' | t }}
                       {%- else -%}
                         {{ 'products.product.sold_out' | t }}
                       {%- endif -%}
-                    {% else %}
-                      <button id="customCheckoutButton">preorder</button>
-                    {%- endunless -%}
+            
+      
                   </button>
                   
                 </div>
-                <script>
-                    document.querySelector('.product-form').addEventListener('submit', function(e) {
-                      e.preventDefault(); // Prevents the default form submission action
+                {% unless product.metafields.custom.is_preorder.value == true %}
+                  <!-- Preorder Button -->
+                  <button id="customCheckoutButton" class="button button--primary">Preorder</button>
+                
+                  <script>
+                      document.querySelector('.product-form').addEventListener('submit', function(e) {
+                        e.preventDefault(); // Prevents the default form submission action
 
-                      var variantId = 'gid://shopify/ProductVariant/44183438459129'; // Your specific variant ID
-                      var sellingPlanId = 'gid://shopify/SellingPlan/4077781241'; // Get the selling plan ID
-                      var quantity = parseInt(document.querySelector('[name="quantity"]').value); // Get the quantity
+                        var variantId = 'gid://shopify/ProductVariant/44183438459129'; // Your specific variant ID
+                        var sellingPlanId = 'gid://shopify/SellingPlan/4077781241'; // Get the selling plan ID
+                        var quantity = parseInt(document.querySelector('[name="quantity"]').value); // Get the quantity
 
-                      var formData = {
-                        'items': [{
-                          'id': variantId,
-                          'quantity': quantity,
-                          'selling_plan': sellingPlanId
-                        }]
-                      };
+                        var formData = {
+                          'items': [{
+                            'id': variantId,
+                            'quantity': quantity,
+                            'selling_plan': sellingPlanId
+                          }]
+                        };
 
-                      fetch('/cart/add.js', {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(formData)
-                      })
-                      .then(response => response.json())
-                      .then(data => {
-                        console.log('Item added to cart', data);
-                        // Optionally, update cart UI here
-                      })
-                      .catch((error) => {
-                        console.error('Error:', error);
+                        fetch('/cart/add.js', {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify(formData)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                          console.log('Item added to cart', data);
+                          // Optionally, update cart UI here
+                        })
+                        .catch((error) => {
+                          console.error('Error:', error);
+                        });
                       });
-                    });
-                    </script>
-
+                      </script>
+                {% endunless %}
 
                 <div class="product-form__buttons_buy">
                   {%- if block.settings.show_dynamic_checkout -%}
