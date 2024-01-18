@@ -33,7 +33,7 @@
     "checkout_body_background_color": "#834747",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_color": "#834747",
-    "checkout_accent_color": "#ffffff",
+    "checkout_accent_color": "#000080",
     "checkout_button_color": "#bc8f8f",
     "themefont": false,
     "sale_badge_color_scheme": "accent-1",
