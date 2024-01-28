@@ -387,8 +387,8 @@
         "9ae7cb4f-d21b-4472-95fc-29fd5a15e6ce": {
           "type": "image",
           "settings": {
-            "subbanner": "shopify:\/\/shop_images\/2023-10-25_15_19_09.jpg",
-            "custom_liquid": "<div class='cms-banner-title-three'>15% Discount<\/div><div class='cms-banner-subtitle-three'>Lay's Chips<br>Series<\/div>",
+            "subbanner": "shopify:\/\/shop_images\/c9ebf776602493aa6fc17cc7eb4b8bb6.jpg",
+            "custom_liquid": "<div class='cms-banner-title-three'>15% Discount<\/div><div class='cms-banner-subtitle-three'>Shuang Hui <br>Series<\/div>",
             "button_link": "shopify:\/\/collections\/lays",
             "button_label": "Shop Now"
           }
