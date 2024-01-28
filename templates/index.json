@@ -389,7 +389,7 @@
           "settings": {
             "subbanner": "shopify:\/\/shop_images\/c9ebf776602493aa6fc17cc7eb4b8bb6.jpg",
             "custom_liquid": "<div class='cms-banner-title-three'>up to $20 Discount<\/div><div class='cms-banner-subtitle-three'>Shuang Hui <br>Series<\/div>",
-            "button_link": "shopify:\/\/collections\/lays",
+            "button_link": "shopify:\/\/collections\/shuang-hui-dry-instant-noodle-series",
             "button_label": "Shop Now"
           }
         }
